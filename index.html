@@ -31,7 +31,8 @@
         compresult=0;
         userresult=0;
         while(userresult<5 && compresult<5)  {
-            userchoice = prompt("Choose rock , paper or scissors");
+            a = prompt("Choose rock , paper or scissors");
+            userchoice= a.toLowerCase()
             compchoice= getcomputerchoice();
             console.log("computer choice is "+ compchoice);
         console.log("User choice  is "+ userchoice);
@@ -42,36 +43,43 @@
         else{
             if(userchoice=="rock" && compchoice=="paper"){
                 compresult=compresult+1;
+                alert("You Lose! ," + compchoice + " beats " + userchoice);
 
 
             }
             if(userchoice=="paper" && compchoice=="rock"){
                 userresult=userresult+1;
+                alert("You Win! ," + userchoice + " beats " + compchoice);
                 
 
             }
             if(userchoice=="rock" && compchoice=="scissors"){
                 userresult=userresult+1;
+                alert("You Win! ," + userchoice + " beats " + compchoice);
                 
 
             }
             if(userchoice=="scissors" && compchoice=="rock"){
                 compresult=compresult+1;
+                alert("You Lose! ," + compchoice + " beats " + userchoice);
                 
 
             }
             if(userchoice=="paper" && compchoice=="scissors"){
                 compresult=compresult+1;
+                alert("You Lose! ," + compchoice + " beats " + userchoice);
                 
 
             }
             if(userchoice=="scissors" && compchoice=="paper"){
                 userresult=userresult+1;
+                alert("You Win! ," + userchoice + " beats " + compchoice);
 
 
                 
 
             }
+
             console.log("computer score is "+ compresult);
         console.log("User score  is "+ userresult);
 
@@ -82,6 +90,8 @@
     }
     console.log("computer total score is "+ compresult);
         console.log("User total score  is "+ userresult);
+
+        
 
 
 
