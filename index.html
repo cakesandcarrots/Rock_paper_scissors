@@ -8,30 +8,33 @@
 </head>
 <body>
     <script>
-        function getcomputerchoice(compchoice){
-            compchoice = (Math.floor(Math.random()*3))+1;
-            if(compchoice==1){
-                compchoice=="rock";
+        function getcomputerchoice(compval){
+            compval = (Math.floor(Math.random()*3))+1;
+            if(compval==1){
+                compchoice="rock";
                 return compchoice;
             }
-            if(compchoice==2){
+            if(compval==2){
                 compchoice="paper";
                 return compchoice;
             }
-            if(compchoice==1){
+            if(compval==3){
                 compchoice="scissors";
                 return compchoice;
             }
+            
 
 
 
         }
-        let compchoice,userchoice,compresult,userresult;
+        let compchoice,userchoice,compresult,userresult,compval;
         compresult=0;
         userresult=0;
-        for(let i=0;i<5;i++){
+        while(userresult<5 && compresult<5)  {
             userchoice = prompt("Choose rock , paper or scissors");
             compchoice= getcomputerchoice();
+            console.log("computer choice is "+ compchoice);
+        console.log("User choice  is "+ userchoice);
             if(userchoice==compchoice){
             alert("Draw");
 
@@ -64,12 +67,25 @@
             }
             if(userchoice=="scissors" && compchoice=="paper"){
                 userresult=userresult+1;
+
+
                 
 
             }
+            console.log("computer score is "+ compresult);
+        console.log("User score  is "+ userresult);
 
         }
+
+
+
     }
+    console.log("computer total score is "+ compresult);
+        console.log("User total score  is "+ userresult);
+
+
+
+
 
 
     </script>
