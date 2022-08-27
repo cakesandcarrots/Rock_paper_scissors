@@ -1,97 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper and scissors</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="buttons">
+        <div>
+            <img class="obj" src="rock.jpg" alt="rock">
+            <p class="text">Rock</p>
+        </div>
+        <div>
+            <img class="obj" src="paper.jpg" alt="paper">
+            <p class="text">Paper</p>
+        </div>
+        <div>
+            <img class="obj" src="scissors.jpg" alt="scissors">
+            <p class="text">Scissors</p>
+        </div>
+    </div>
+
+
+
     <script>
-        function getcomputerchoice(compval){
-            compval = (Math.floor(Math.random()*3))+1;
-            if(compval==1){
-                compchoice="rock";
-                return compchoice;
-            }
-            if(compval==2){
-                compchoice="paper";
-                return compchoice;
-            }
-            if(compval==3){
-                compchoice="scissors";
-                return compchoice;
-            }
-            
 
+
+        const imglist = document.querySelectorAll(".obj");
+        console.log(imglist);
+
+
+        for (let i = 0; i < imglist.length; i++) {
+            let image = imglist[0];
 
 
         }
-        let compchoice,userchoice,compresult,userresult,compval;
-        compresult=0;
-        userresult=0;
-        while(userresult<5 && compresult<5)  {
-            a = prompt("Choose rock , paper or scissors");
-            userchoice= a.toLowerCase()
-            compchoice= getcomputerchoice();
-            console.log("computer choice is "+ compchoice);
-        console.log("User choice  is "+ userchoice);
-            if(userchoice==compchoice){
-            alert("Draw");
-
-        }
-        else{
-            if(userchoice=="rock" && compchoice=="paper"){
-                compresult=compresult+1;
-                alert("You Lose! ," + compchoice + " beats " + userchoice);
 
 
-            }
-            if(userchoice=="paper" && compchoice=="rock"){
-                userresult=userresult+1;
-                alert("You Win! ," + userchoice + " beats " + compchoice);
-                
+        /*  function getcomputerchoice(compval) {
+             compval = (Math.floor(Math.random() * 3)) + 1;
+             if (compval == 1) {
+                 compchoice = "rock";
+                 return compchoice;
+             }
+             if (compval == 2) {
+                 compchoice = "paper";
+                 return compchoice;
+             }
+             if (compval == 3) {
+                 compchoice = "scissors";
+                 return compchoice;
+             }
+ 
+ 
+ 
+ 
+         }
+         let compchoice, userchoice, compresult, userresult, compval;
+         compresult = 0;
+         userresult = 0;
 
-            }
-            if(userchoice=="rock" && compchoice=="scissors"){
-                userresult=userresult+1;
-                alert("You Win! ," + userchoice + " beats " + compchoice);
-                
+             else {
+                 if (userchoice == "rock" && compchoice == "paper") {
+                     compresult = compresult + 1;
+                     alert("You Lose! ," + compchoice + " beats " + userchoice);
+ 
+ 
+                 }
+                 if (userchoice == "paper" && compchoice == "rock") {
+                     userresult = userresult + 1;
+                     alert("You Win! ," + userchoice + " beats " + compchoice);
+ 
+ 
+                 }
+                 if (userchoice == "rock" && compchoice == "scissors") {
+                     userresult = userresult + 1;
+                     alert("You Win! ," + userchoice + " beats " + compchoice);
+ 
+ 
+                 }
+                 if (userchoice == "scissors" && compchoice == "rock") {
+                     compresult = compresult + 1;
+                     alert("You Lose! ," + compchoice + " beats " + userchoice);
+ 
+ 
+                 }
+                 if (userchoice == "paper" && compchoice == "scissors") {
+                     compresult = compresult + 1;
+                     alert("You Lose! ," + compchoice + " beats " + userchoice);
+ 
+ 
+                 }
+                 if (userchoice == "scissors" && compchoice == "paper") {
+                     userresult = userresult + 1;
+                     alert("You Win! ," + userchoice + " beats " + compchoice);
+ 
+ 
+ 
+ 
+                 }
+ 
+                 console.log("computer score is " + compresult);
+                 console.log("User score  is " + userresult);
+ 
+             }
+ 
+ 
+ 
+         }
+         console.log("computer total score is " + compresult);
+         console.log("User total score  is " + userresult);
+  */
 
-            }
-            if(userchoice=="scissors" && compchoice=="rock"){
-                compresult=compresult+1;
-                alert("You Lose! ," + compchoice + " beats " + userchoice);
-                
-
-            }
-            if(userchoice=="paper" && compchoice=="scissors"){
-                compresult=compresult+1;
-                alert("You Lose! ," + compchoice + " beats " + userchoice);
-                
-
-            }
-            if(userchoice=="scissors" && compchoice=="paper"){
-                userresult=userresult+1;
-                alert("You Win! ," + userchoice + " beats " + compchoice);
-
-
-                
-
-            }
-
-            console.log("computer score is "+ compresult);
-        console.log("User score  is "+ userresult);
-
-        }
-
-
-
-    }
-    console.log("computer total score is "+ compresult);
-        console.log("User total score  is "+ userresult);
-
-        
 
 
 
@@ -99,6 +123,7 @@
 
 
     </script>
-    
+
 </body>
+
 </html>
