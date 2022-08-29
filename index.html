@@ -14,6 +14,7 @@
     <div class="resulttext">
         <p id="Userscore">Your Score: 0</p>
         <p id="compscore">Computer Score: 0</p>
+        <p id="final">testing</p>
     </div>
 
 
@@ -35,136 +36,174 @@
 
 
     <script>
+
+
         let compval, compchoice, userchoice, compresult, userresult;
+        const imglist = document.querySelectorAll(".obj");
+
         compresult = 0;
         userresult = 0;
-        if (compresult <= 5 && userresult <= 5) {
-            const imglist = document.querySelectorAll(".obj");
-            imglist[0].addEventListener('click', () => {
-                userchoice = "rock";
-                result(userchoice, compchoice);
-                compval = (Math.floor(Math.random() * 3)) + 1;
-                if (compval == 1) {
-                    compchoice = "rock";
-                    return compchoice;
-                }
-                if (compval == 2) {
-                    compchoice = "paper";
-                    return compchoice;
-                }
-                if (compval == 3) {
-                    compchoice = "scissors";
-                    return compchoice;
-                }
-                result(userchoice, compchoice);
+
+
+
+        imglist[0].addEventListener('click', () => {
+
+
+            userchoice = "rock";
+            compval = (Math.floor(Math.random() * 3)) + 1;
+            if (compval == 1) {
+                compchoice = "rock";
 
             }
-            )
-
-            imglist[1].addEventListener('click', () => {
-                userchoice = "paper";
-                result(userchoice);
-                compval = (Math.floor(Math.random() * 3)) + 1;
-                if (compval == 1) {
-                    compchoice = "rock";
-                    return compchoice;
-                }
-                if (compval == 2) {
-                    compchoice = "paper";
-                    return compchoice;
-                }
-                if (compval == 3) {
-                    compchoice = "scissors";
-                    return compchoice;
-                }
-                result(userchoice, compchoice);
+            if (compval == 2) {
+                compchoice = "paper";
 
             }
-            )
+            if (compval == 3) {
+                compchoice = "scissors";
 
-            imglist[2].addEventListener('click', () => {
-                userchoice = "scissors";
-                result(userchoice);
-                compval = (Math.floor(Math.random() * 3)) + 1;
-                if (compval == 1) {
-                    compchoice = "rock";
-                    return compchoice;
-                }
-                if (compval == 2) {
-                    compchoice = "paper";
-                    return compchoice;
-                }
-                if (compval == 3) {
-                    compchoice = "scissors";
-                    return compchoice;
-                }
-                result(userchoice, compchoice);
             }
-            )
-
-            function result(userchoice, compchoice) {
-
-
-                if (userchoice == "rock" && compchoice == "paper") {
-                    compresult = compresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+            result(userchoice, compchoice);
+        });
 
 
 
 
+        imglist[1].addEventListener('click', () => {
+            userchoice = "paper";
+            compval = (Math.floor(Math.random() * 3)) + 1;
+            if (compval == 1) {
+                compchoice = "rock";
 
-                }
-                if (userchoice == "paper" && compchoice == "rock") {
-                    userresult = userresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+            }
+            if (compval == 2) {
+                compchoice = "paper";
 
+            }
+            if (compval == 3) {
+                compchoice = "scissors";
 
+            }
 
-
-
-
-                }
-                if (userchoice == "rock" && compchoice == "scissors") {
-                    userresult = userresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
-
-
+            result(userchoice, compchoice);
 
 
+        });
 
-                }
-                if (userchoice == "scissors" && compchoice == "rock") {
-                    compresult = compresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+        imglist[2].addEventListener('click', () => {
 
+            userchoice = "scissors";
+            compval = (Math.floor(Math.random() * 3)) + 1;
+            if (compval == 1) {
+                compchoice = "rock";
 
+            }
+            if (compval == 2) {
+                compchoice = "paper";
 
+            }
+            if (compval == 3) {
+                compchoice = "scissors";
 
-
-                }
-                if (userchoice == "paper" && compchoice == "scissors") {
-                    compresult = compresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
-
-
+            }
 
 
 
-                }
-                if (userchoice == "scissors" && compchoice == "paper") {
-                    userresult = userresult + 1;
-                    document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
-                    document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+            result(userchoice, compchoice);
+        });
 
 
-                }
+        function result(userchoice, compchoice) {
+
+            if (userchoice === compchoice) {
+                alert(`It's a draw`)
+                return;
+            }
+
+            if (userresult == 5 || compresult == 5) {
+
+                return;
+            }
+
+
+            if (userchoice == "rock" && compchoice == "paper") {
+                compresult = compresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return compresult;
+
+
+
+
+
+            }
+            if (userchoice == "paper" && compchoice == "rock") {
+                userresult = userresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return userresult;
+
+
+
+
+
+
+            }
+            if (userchoice == "rock" && compchoice == "scissors") {
+                userresult = userresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return userresult;
+
+
+
+
+
+            }
+            if (userchoice == "scissors" && compchoice == "rock") {
+                compresult = compresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return compresult
+
+
+
+
+
+            }
+            if (userchoice == "paper" && compchoice == "scissors") {
+                compresult = compresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return compresult
+
+
+
+
+
+            }
+            if (userchoice == "scissors" && compchoice == "paper") {
+                userresult = userresult + 1;
+                document.getElementById("Userscore").innerHTML = "Your score: " + userresult;
+                document.getElementById("compscore").innerHTML = "Computer score: " + compresult;
+                return userresult
+
+
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
