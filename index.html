@@ -10,11 +10,21 @@
 </head>
 
 <body>
+    <div class="displayText">
+        <div>
+            <div class="resulttext">
+                <p id="Userscore">Your Score: 0</p>
+                <p id="compscore">Computer Score: 0</p>
+            </div>
+            <div>
+                <p id="comp"> choice is</p>
+            </div>
+        </div>
 
-    <div class="resulttext">
-        <p id="Userscore">Your Score: 0</p>
-        <p id="compscore">Computer Score: 0</p>
-        <p id="final">testing</p>
+        <div class="declareWinner">
+            <p>Computer <br> Won</p>
+
+        </div>
     </div>
 
 
@@ -63,6 +73,7 @@
                 compchoice = "scissors";
 
             }
+
             result(userchoice, compchoice);
         });
 
@@ -114,6 +125,9 @@
 
 
         function result(userchoice, compchoice) {
+            comp = document.querySelector('#comp');
+            comp.innerHTML = 'Computer chose:' + compchoice;
+
 
             if (userchoice === compchoice) {
                 alert(`It's a draw`)
@@ -121,9 +135,26 @@
             }
 
             if (userresult == 5 || compresult == 5) {
+                if (userresult == 5) {
+                    winner = document.querySelector('.declareWinner');
+                    winner.innerHTML = 'You Won';
+                    return;
+                }
+                else {
+                    winner = document.querySelector('.declareWinner');
+                    winner.innerHTML = 'Computer Won';
+                    return;
 
-                return;
+
+
+                }
+
+
+
             }
+
+
+
 
 
             if (userchoice == "rock" && compchoice == "paper") {
