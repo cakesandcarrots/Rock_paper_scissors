@@ -16,13 +16,15 @@
                 <p id="Userscore">Your Score: 0</p>
                 <p id="compscore">Computer Score: 0</p>
             </div>
-            <div>
-                <p id="comp"> choice is</p>
+            <div class="midtext">
+                <p id='draw'></p>
+
+                <p id="comp"></p>
             </div>
         </div>
 
         <div class="declareWinner">
-            <p>Computer <br> Won</p>
+            <p></p>
 
         </div>
     </div>
@@ -57,8 +59,8 @@
 
 
         imglist[0].addEventListener('click', () => {
-
-
+            draw = document.querySelector('#draw');
+            draw.display = 'none';
             userchoice = "rock";
             compval = (Math.floor(Math.random() * 3)) + 1;
             if (compval == 1) {
@@ -81,6 +83,8 @@
 
 
         imglist[1].addEventListener('click', () => {
+            draw = document.querySelector('#draw');
+            draw.display = 'none';
             userchoice = "paper";
             compval = (Math.floor(Math.random() * 3)) + 1;
             if (compval == 1) {
@@ -102,7 +106,8 @@
         });
 
         imglist[2].addEventListener('click', () => {
-
+            draw = document.querySelector('#draw');
+            draw.display = 'none';
             userchoice = "scissors";
             compval = (Math.floor(Math.random() * 3)) + 1;
             if (compval == 1) {
@@ -125,16 +130,31 @@
 
 
         function result(userchoice, compchoice) {
-            comp = document.querySelector('#comp');
-            comp.innerHTML = 'Computer chose:' + compchoice;
+            let show = document.querySelector('#comp');
+            show.innerHTML = 'Computer chose: ' + compchoice;
 
 
-            if (userchoice === compchoice) {
-                alert(`It's a draw`)
-                return;
+            if (userresult < 5 && compresult < 5) {
+
+                if (userchoice === compchoice) {
+                    draw = document.querySelector('#draw')
+                    draw.style.visibility = "visible";
+                    draw.innerHTML = 'DRAW';
+
+                }
+                else {
+                    draw = document.querySelector('#draw')
+                    draw.style.visibility = "hidden";
+
+
+
+
+                }
             }
+            else {
+                comp.style.visibility = 'hidden';
 
-            if (userresult == 5 || compresult == 5) {
+
                 if (userresult == 5) {
                     winner = document.querySelector('.declareWinner');
                     winner.innerHTML = 'You Won';
@@ -144,13 +164,7 @@
                     winner = document.querySelector('.declareWinner');
                     winner.innerHTML = 'Computer Won';
                     return;
-
-
-
                 }
-
-
-
             }
 
 
@@ -222,103 +236,6 @@
 
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*  function getcomputerchoice(compval) {
-             compval = (Math.floor(Math.random() * 3)) + 1;
-             if (compval == 1) {
-                 compchoice = "rock";
-                 return compchoice;
-             }
-             if (compval == 2) {
-                 compchoice = "paper";
-                 return compchoice;
-             }
-             if (compval == 3) {
-                 compchoice = "scissors";
-                 return compchoice;
-             }
- 
- 
- 
- 
-         }
-         let compchoice, userchoice, compresult, userresult, compval;
-         compresult = 0;
-         userresult = 0;
-
-             else {
-                 if (userchoice == "rock" && compchoice == "paper") {
-                     compresult = compresult + 1;
-                     alert("You Lose! ," + compchoice + " beats " + userchoice);
- 
- 
-                 }
-                 if (userchoice == "paper" && compchoice == "rock") {
-                     userresult = userresult + 1;
-                     alert("You Win! ," + userchoice + " beats " + compchoice);
- 
- 
-                 }
-                 if (userchoice == "rock" && compchoice == "scissors") {
-                     userresult = userresult + 1;
-                     alert("You Win! ," + userchoice + " beats " + compchoice);
- 
- 
-                 }
-                 if (userchoice == "scissors" && compchoice == "rock") {
-                     compresult = compresult + 1;
-                     alert("You Lose! ," + compchoice + " beats " + userchoice);
- 
- 
-                 }
-                 if (userchoice == "paper" && compchoice == "scissors") {
-                     compresult = compresult + 1;
-                     alert("You Lose! ," + compchoice + " beats " + userchoice);
- 
- 
-                 }
-                 if (userchoice == "scissors" && compchoice == "paper") {
-                     userresult = userresult + 1;
-                     alert("You Win! ," + userchoice + " beats " + compchoice);
- 
- 
- 
- 
-                 }
- 
-                 console.log("computer score is " + compresult);
-                 console.log("User score  is " + userresult);
- 
-             }
- 
- 
- 
-         }
-         console.log("computer total score is " + compresult);
-         console.log("User total score  is " + userresult);
-  */
-
-
-
-
 
 
 
